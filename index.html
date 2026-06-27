@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSEFIT CORE 社内資料集 & マニュアル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif; scroll-behavior: smooth; }
+        .prose-custom p { margin-bottom: 1rem; line-height: 1.8; color: #475569; }
+        .prose-custom li { margin-bottom: 0.5rem; color: #475569; }
+    </style>
+</head>
+<body class="bg-slate-50 h-screen overflow-hidden flex text-slate-800">
+
+    <aside class="w-72 bg-slate-900 text-slate-300 hidden lg:flex flex-col flex-shrink-0 shadow-xl z-20">
+        <div class="p-6 bg-slate-950 border-b border-slate-800">
+            <span class="text-[10px] font-bold text-indigo-400 tracking-widest uppercase">Internal Handbook</span>
+            <h2 class="text-xl font-black text-white mt-1">MUSEFIT CORE</h2>
+        </div>
+        <nav class="flex-1 overflow-y-auto py-6 px-4 space-y-1">
+            <a href="#cover" class="block px-4 py-2.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors text-sm font-bold flex items-center gap-3"><i data-lucide="book-open" class="w-4 h-4"></i> 表紙</a>
+            <a href="#overview" class="block px-4 py-2.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors text-sm font-bold flex items-center gap-3"><i data-lucide="info" class="w-4 h-4"></i> システムの概要</a>
+            <a href="#features" class="block px-4 py-2.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors text-sm font-bold flex items-center gap-3"><i data-lucide="list" class="w-4 h-4"></i> 主要機能一覧</a>
+            <a href="#kpi" class="block px-4 py-2.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors text-sm font-bold flex items-center gap-3"><i data-lucide="target" class="w-4 h-4"></i> 管理KPI(重要度順)</a>
+            <a href="#calc" class="block px-4 py-2.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors text-sm font-bold flex items-center gap-3"><i data-lucide="calculator" class="w-4 h-4"></i> 売上の計算構造</a>
+            <div class="pt-6 pb-2 px-4 text-xs font-black text-slate-500 uppercase tracking-widest">操作マニュアル</div>
+            <a href="#manual-store" class="block px-4 py-2.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors text-sm font-bold flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> 店長向け</a>
+            <a href="#manual-kurusu" class="block px-4 py-2.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors text-sm font-bold flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-violet-500"></span> 来栖事業部長向け</a>
+            <a href="#manual-fujiwara" class="block px-4 py-2.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors text-sm font-bold flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-purple-500"></span> 藤原COO向け</a>
+            <a href="#manual-hq" class="block px-4 py-2.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors text-sm font-bold flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-indigo-500"></span> 管理本部向け</a>
+            <a href="#manual-president" class="block px-4 py-2.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors text-sm font-bold flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-rose-500"></span> 北山社長向け</a>
+            <div class="pt-6 pb-2 px-4 text-xs font-black text-slate-500 uppercase tracking-widest">社内通知</div>
+            <a href="#press-release" class="block px-4 py-2.5 rounded-lg bg-indigo-600/20 text-indigo-400 hover:bg-indigo-600/40 hover:text-white transition-colors text-sm font-bold flex items-center gap-3"><i data-lucide="megaphone" class="w-4 h-4"></i> プレスリリース</a>
+        </nav>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto scroll-smooth">
+        <div class="max-w-4xl mx-auto p-6 md:p-12 lg:py-20 space-y-24">
+
+            <section id="cover" class="bg-white rounded-3xl p-10 md:p-16 shadow-lg border border-slate-100 text-center relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-600 to-rose-500"></div>
+                <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">MUSEFIT 統合管理プラットフォーム<br><span class="text-indigo-600 block mt-4">社内資料集</span></h1>
+                <p class="text-lg font-bold text-slate-500 mb-12">MUSEFIT CORE V25.0</p>
+                <div class="inline-flex flex-col text-sm text-slate-400 font-mono bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <span>発行: 管理本部</span>
+                    <span>発行日: 2026年6月</span>
+                </div>
+            </section>
+
+            <section id="overview" class="scroll-mt-10">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3 pb-2 border-b-2 border-slate-200"><span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-lg flex items-center justify-center">1</span> システムの目的</h2>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 prose-custom text-lg">
+                    <p>MUSEFIT 統合管理プラットフォームは、フィットネスジム「MUSEFIT」の2店舗（並木店・横川店）における売上・KPI・行動計画・社内コミュニケーションを一元管理するクラウド型の社内業務システムです。</p>
+                </div>
+            </section>
+
+            <section id="features" class="scroll-mt-10">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3 pb-2 border-b-2 border-slate-200"><span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-lg flex items-center justify-center">2</span> 主要機能一覧</h2>
+                <div class="overflow-hidden bg-white rounded-2xl shadow-sm border border-slate-200">
+                    <table class="w-full text-left border-collapse">
+                        <thead><tr class="bg-slate-50 text-slate-500 text-sm border-b border-slate-200"><th class="p-4 font-bold w-1/3">機能</th><th class="p-4 font-bold">内容</th></tr></thead>
+                        <tbody class="divide-y divide-slate-100 text-sm font-medium text-slate-700">
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">総合ダッシュボード</td><td class="p-4">2店舗の売上進捗・KPI・TODO・キャンペーンをリアルタイム表示</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">実績＆計画入力</td><td class="p-4">店長による月次目標・売上実績・予測売上の入力（着地見込み自動計算）</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">日次報告</td><td class="p-4">毎日の売上・体験数・入会数を記録。月次フォームへ自動集計</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">② 来栖部長精査</td><td class="p-4">部長による各店舗実績の確認・AI分析・個別連絡</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">③ 藤原COO精査</td><td class="p-4">COOによる統括精査・管理本部・社長への報告書提出</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">管理本部専用</td><td class="p-4">社長要望の「翻訳フィルター」機能・現場へのTODO直接配信</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">⑤ 社長要望コンソール</td><td class="p-4">社長が要望・指示を安全にプールする専用フォーム</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">月次振り返り</td><td class="p-4">KPI 6項目の重要度別評価表・履歴グラフ・CSVダウンロード</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-900">AI分析</td><td class="p-4">Gemini APIによる数値分析レポートの自動生成</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="kpi" class="scroll-mt-10">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3 pb-2 border-b-2 border-slate-200"><span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-lg flex items-center justify-center">3</span> 管理KPI (重要度順)</h2>
+                <div class="overflow-hidden bg-white rounded-2xl shadow-sm border border-slate-200">
+                    <table class="w-full text-left border-collapse">
+                        <thead><tr class="bg-indigo-50 text-indigo-800 text-sm border-b border-slate-200"><th class="p-4 font-bold">優先順位</th><th class="p-4 font-bold">KPI指標</th><th class="p-4 font-bold">マスト基準</th><th class="p-4 font-bold">目標基準</th><th class="p-4 font-bold">備考</th></tr></thead>
+                        <tbody class="divide-y divide-slate-100 text-sm font-medium text-slate-700">
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-black text-rose-500">1位</td><td class="p-4 font-bold text-slate-900">新規 体験→入会率</td><td class="p-4 font-mono">70%</td><td class="p-4 font-mono font-bold text-indigo-600">80%</td><td class="p-4 text-xs text-slate-500">最重要指標</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-black text-rose-500">2位</td><td class="p-4 font-bold text-slate-900">新規顧客単価</td><td class="p-4 font-mono">12万円</td><td class="p-4 font-mono font-bold text-indigo-600">15万円</td><td class="p-4 text-xs text-slate-500">入会時の単価</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-400">3位</td><td class="p-4 font-bold text-slate-900">既存客 キャンセル率</td><td class="p-4 font-mono">15%以下</td><td class="p-4 font-mono font-bold text-indigo-600">10%以下</td><td class="p-4 text-xs text-slate-500">低いほど良</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-400">4位</td><td class="p-4 font-bold text-slate-900">既存客単価(月平均)</td><td class="p-4 font-mono">1.5万円</td><td class="p-4 font-mono font-bold text-indigo-600">1.8万円</td><td class="p-4 text-xs text-slate-500">回数券等含む</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-400">5位</td><td class="p-4 font-bold text-slate-900">回数券 継続率</td><td class="p-4 font-mono">90%</td><td class="p-4 font-mono font-bold text-indigo-600">100%</td><td class="p-4 text-xs text-slate-500">継続購入率</td></tr>
+                            <tr class="hover:bg-slate-50"><td class="p-4 font-bold text-slate-400">6位</td><td class="p-4 font-bold text-slate-900">退会率(入会継続率)</td><td class="p-4 font-mono">5%以下</td><td class="p-4 font-mono font-bold text-indigo-600">4%以下</td><td class="p-4 text-xs text-slate-500">低いほど良</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="calc" class="scroll-mt-10">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3 pb-2 border-b-2 border-slate-200"><span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-lg flex items-center justify-center">4</span> 売上の計算構造</h2>
+                <div class="bg-indigo-900 text-white p-6 rounded-2xl shadow-md">
+                    <div class="text-xl font-black mb-4 pb-4 border-b border-indigo-700">月間着地見込み <br><span class="text-indigo-300 text-sm font-medium">= A (実績累計) + B (予測売上)</span></div>
+                    <ul class="space-y-3 text-sm text-indigo-100 font-medium">
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 shrink-0 text-emerald-400 mt-0.5"></i> <span><strong class="text-white">A (実績累計)</strong> = 日報から自動集計（既存売上 ＋ 新規売上）</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 shrink-0 text-emerald-400 mt-0.5"></i> <span><strong class="text-white">B (予測売上)</strong> = 回数券予測 ＋ 物販予測 ＋ 月会費その他 ＋ 新規売上予測</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="percent" class="w-4 h-4 shrink-0 text-amber-400 mt-0.5"></i> <span><strong class="text-white">達成率(%)</strong> = 着地見込み ÷ 月次目標 × 100</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="manual" class="scroll-mt-10 pt-8">
+                <h2 class="text-3xl font-black text-slate-900 mb-10 text-center uppercase tracking-widest"><i data-lucide="book-open" class="inline w-8 h-8 text-indigo-600 mr-2"></i> 担当者別 操作マニュアル</h2>
+
+                <div class="space-y-8">
+                    <!-- Store Manager -->
+                    <div id="manual-store" class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-emerald-500 scroll-mt-10">
+                        <div class="flex items-center gap-3 mb-6"><span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold font-mono">namiki / yokogawa</span><h3 class="text-xl font-bold text-slate-900">店長 (米田・石井) 向け</h3></div>
+                        <div class="prose-custom space-y-6">
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-md mb-2 flex items-center gap-2"><i data-lucide="edit-3" class="w-4 h-4 text-emerald-500"></i> 【毎日の作業】 ⑤ 日次報告</h4>
+                                <p class="text-sm">日次報告は毎日入力してください。日報の数値が月次フォームの「実績累計A」に自動集計されます。</p>
+                                <ul class="list-disc pl-5 text-sm space-y-1">
+                                    <li>ログイン後、上部タブから「⑤ 日次報告」をクリック</li>
+                                    <li>報告日、既存売上(万)、新規売上(万)、新規体験数、入会件数、新規残数、申し送りを入力</li>
+                                    <li>「日報を送信する」ボタンを押して完了</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-md mb-2 flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-emerald-500"></i> 【月次作業】 ① 実績＆計画入力</h4>
+                                <p class="text-sm">月初に月次目標・予測の入力を行います。グレーアウトした欄（日報から自動集計される欄）は入力不要です。</p>
+                                <ul class="list-disc pl-5 text-sm space-y-1">
+                                    <li><strong>【1段目】</strong> 報告日・既存目標・新規目標を入力（合計は自動計算）</li>
+                                    <li><strong>【2段目】</strong> 実績累計A → 日報から自動集計されるため入力不要</li>
+                                    <li><strong>【3段目】</strong> 予測売上B → 回数券・物販・月会費の見込みを入力</li>
+                                    <li><strong>【5段目】</strong> 体験残数を手入力、新規売上予測Bを入力</li>
+                                    <li><strong>【6段目】</strong> KPI実績（キャンセル率・既存客単価・回数券継続率・退会率）を入力</li>
+                                    <li>「予測と設定データを保存・同期する」ボタンで保存</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kurusu -->
+                    <div id="manual-kurusu" class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-violet-500 scroll-mt-10">
+                        <div class="flex items-center gap-3 mb-6"><span class="bg-violet-100 text-violet-700 px-3 py-1 rounded-full text-xs font-bold font-mono">kurusu</span><h3 class="text-xl font-bold text-slate-900">来栖事業部長 向け</h3></div>
+                        <ul class="list-disc pl-5 text-sm space-y-3 prose-custom">
+                            <li>「②来栖部長精査」タブで各店舗の売上進捗・KPIを確認</li>
+                            <li>「AI数値分析を生成」ボタンでGemini AIが各店舗への指示コメントを自動作成</li>
+                            <li>「店長との個別連絡」エリアで各店長へプライベートメッセージを送信（他のレイヤーには非公開）</li>
+                            <li>「事業部長 ⇔ COO連絡チャット」で藤原COOとコミュニケーション</li>
+                            <li>「⑥ 月次振り返り」でKPI評価表・グラフを閲覧・CSVダウンロード</li>
+                        </ul>
+                    </div>
+
+                    <!-- Fujiwara -->
+                    <div id="manual-fujiwara" class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-purple-500 scroll-mt-10">
+                        <div class="flex items-center gap-3 mb-6"><span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold font-mono">fujiwara</span><h3 class="text-xl font-bold text-slate-900">藤原COO 向け</h3></div>
+                        <ul class="list-disc pl-5 text-sm space-y-3 prose-custom">
+                            <li>「③ COO精査」タブで全店舗実績を統括確認</li>
+                            <li>「AI報告書下書き生成」ボタンで報告書の下書きをAIが自動作成</li>
+                            <li>「管理本部への週次総括報告」欄に報告書を記入 → 「管理本部へ報告書を提出」ボタンで送信</li>
+                            <li>「社長へのダイレクト総括報告」欄に記入 → 「社長へ報告書を提出」ボタンで送信</li>
+                        </ul>
+                    </div>
+
+                    <!-- Management HQ -->
+                    <div id="manual-hq" class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-indigo-500 scroll-mt-10">
+                        <div class="flex items-center gap-3 mb-6"><span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold font-mono">hq</span><h3 class="text-xl font-bold text-slate-900">管理本部 向け</h3></div>
+                        <div class="prose-custom space-y-6">
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-md mb-2 flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4 text-indigo-500"></i> 社長要望の「翻訳フィルター」(最重要機能)</h4>
+                                <p class="text-sm">社長からの要望はこのフィルターにプールされ、現場（店長）には直接見えません。</p>
+                                <ul class="list-decimal pl-5 text-sm space-y-1 font-bold mt-2">
+                                    <li>要望内容を確認し、ステータスを「精査中」に変更</li>
+                                    <li>「現場向けの具体的な指示翻訳」欄に3ステップのTODOへ翻訳・記入</li>
+                                    <li>「宛先」を選択 → 「TODO指示化」ボタンで現場に配信</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-md mb-2 flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-indigo-500"></i> 現場へのダイレクトTODO指示</h4>
+                                <ul class="list-disc pl-5 text-sm space-y-1">
+                                    <li>対象店舗・責任担当者・完了期限を設定し、具体的な指示内容を入力</li>
+                                    <li>「現場へ直接TODOを配信する」で送信（ダッシュボードに即時表示）</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-md mb-2 flex items-center gap-2"><i data-lucide="sliders" class="w-4 h-4 text-indigo-500"></i> KPI設定と代理入力</h4>
+                                <ul class="list-disc pl-5 text-sm space-y-1">
+                                    <li>KPI 1〜6位のマスト基準・目標基準を変更可能</li>
+                                    <li>各店舗の3〜6位KPI実績の代理入力も可能</li>
+                                    <li>「設定と実績を保存する」で保存（⑥月次振り返りに即時反映）</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- President -->
+                    <div id="manual-president" class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-rose-500 scroll-mt-10">
+                        <div class="flex items-center gap-3 mb-6"><span class="bg-rose-100 text-rose-700 px-3 py-1 rounded-full text-xs font-bold font-mono">president</span><h3 class="text-xl font-bold text-slate-900">北山社長 向け</h3></div>
+                        <ul class="list-disc pl-5 text-sm space-y-3 prose-custom">
+                            <li>「⑤ 社長要望・直結コンソール」タブを使用</li>
+                            <li>要望カテゴリーを選択し、対象（藤原COOまたは管理本部）を指定</li>
+                            <li>要望・アイデア原文を自由に記入（ラフな表現でOK）</li>
+                            <li>希望実行期限・優先レベルを設定し、「送信する」ボタンを押下</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-rose-50 rounded-lg text-xs text-rose-700 font-bold border border-rose-100">
+                            ※送信された要望は管理本部の「翻訳フィルター」に届き、現場向けTODOに変換後に配信されます。
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="press-release" class="scroll-mt-10 pt-16">
+                <div class="bg-white rounded-xl shadow-2xl p-8 md:p-14 border border-slate-200 relative overflow-hidden">
+                    <!-- Letterhead styling -->
+                    <div class="absolute top-0 left-0 w-full h-3 bg-slate-900"></div>
+                    <div class="flex justify-between items-end mb-10 border-b-2 border-slate-900 pb-4">
+                        <div>
+                            <h2 class="text-2xl font-black text-slate-900 tracking-widest">社内プレスリリース</h2>
+                            <p class="text-xs text-slate-500 font-bold mt-1">INTERNAL ANNOUNCEMENT</p>
+                        </div>
+                        <div class="text-right font-mono text-sm text-slate-600 font-bold">
+                            <p>配布対象: 全社員</p>
+                            <p>発行: 管理本部</p>
+                            <p>2026年6月</p>
+                        </div>
+                    </div>
+
+                    <h1 class="text-2xl md:text-3xl font-black text-center text-slate-900 mb-6 leading-tight">MUSEFIT 統合管理プラットフォーム<br>本番稼働のお知らせ</h1>
+                    <p class="text-center text-indigo-600 font-bold text-lg mb-12 tracking-wide">〜売上リアルタイム可視化から社長の防衛フィルターまで、全社業務を一元管理〜</p>
+                    
+                    <div class="prose max-w-none text-slate-700 text-sm md:text-base leading-loose space-y-8 font-medium">
+                        <p>この度、MUSEFITは全社の売上管理・KPI追跡・行動計画・社内コミュニケーションを統合した「MUSEFIT 統合管理プラットフォーム (MUSEFIT CORE V25.0)」を本番稼働させましたのでお知らせいたします。</p>
+                        
+                        <div>
+                            <h3 class="text-lg font-black text-slate-900 border-l-4 border-slate-900 pl-3 mb-4">■ 開発背景と解決した課題</h3>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>店舗の売上進捗をリアルタイムで把握する手段がなかった</li>
+                                <li>社長・COO・管理本部・事業部長・店長間の情報伝達に時間がかかっていた</li>
+                                <li>社長からの要望が現場に「そのまま」届き、現場が混乱するケースがあった</li>
+                                <li>KPIの達成状況が月1回の会議まで分からなかった</li>
+                                <li>行動計画(TODO) が口頭・紙・チャットに散在し、追跡できていなかった</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-black text-slate-900 border-l-4 border-indigo-600 pl-3 mb-4 mt-8">■ 新システムで実現すること</h3>
+                            
+                            <div class="space-y-6 pl-2">
+                                <div>
+                                    <h4 class="font-bold text-indigo-700 mb-1">1. 売上のリアルタイム可視化</h4>
+                                    <p class="text-sm">店長が日報を入力するだけで、管理本部・COO・社長のダッシュボードに即時反映されます。月次目標に対する達成率・着地見込みが常に最新の状態で全担当者が確認できます。</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-indigo-700 mb-1">2. 多層的な情報フロー管理</h4>
+                                    <p class="text-sm">各レイヤーに専用画面が用意されており、それぞれの権限に応じた情報のみが表示されます。<br><span class="font-bold text-slate-500 mt-2 block bg-slate-50 p-2 rounded">店長 → 来栖部長 → 藤原COO → 管理本部 → 北山社長</span></p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-indigo-700 mb-1">3. 社長要望の「翻訳フィルター」機能</h4>
+                                    <p class="text-sm">社長からの直結要望を直接現場に流さず、管理本部が精査・翻訳し、具体的なTODOとして配信します。</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-indigo-700 mb-1">4. KPI 重要度別 月次振り返りと対策連動</h4>
+                                    <p class="text-sm">毎月の振り返り会議で使用する6つのKPI評価表が自動生成されます。「要改善」となった指標に対しては、店長が自律的に対策レポートを入力・共有する仕組みを搭載しています。</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-indigo-700 mb-1">5. AI分析レポートの自動生成</h4>
+                                    <p class="text-sm">各店舗の数値をAI (Google Gemini) が分析し、各マネージャー向けのコメントと店長へのアドバイスを自動生成します。会議の準備時間を大幅に短縮できます。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-black text-slate-900 border-l-4 border-emerald-500 pl-3 mb-4 mt-8">■ 各担当者へのお願い</h3>
+                            <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+                                <table class="w-full text-left text-sm">
+                                    <tbody class="divide-y divide-slate-200">
+                                        <tr><td class="p-3 font-bold text-slate-800 bg-slate-100 w-1/3">店長 (米田・石井)</td><td class="p-3">毎日の日次報告と、月初の実績・予測入力、要改善時の対策入力をお願いします。</td></tr>
+                                        <tr><td class="p-3 font-bold text-slate-800 bg-slate-100">来栖部長</td><td class="p-3">週次で各店舗の進捗確認とAI分析の実施をお願いします。</td></tr>
+                                        <tr><td class="p-3 font-bold text-slate-800 bg-slate-100">藤原COO</td><td class="p-3">管理本部・社長への週次報告書の定期提出をお願いします。</td></tr>
+                                        <tr><td class="p-3 font-bold text-slate-800 bg-slate-100">管理本部</td><td class="p-3">社長要望の翻訳・TODO配信と、KPI設定の管理をお願いします。</td></tr>
+                                        <tr><td class="p-3 font-bold text-slate-800 bg-slate-100">北山社長</td><td class="p-3">要望・指示は専用コンソールからの入力をお願いします。</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-8 mt-10">
+                            <div class="flex-1">
+                                <h3 class="text-md font-black text-slate-900 border-b border-slate-200 pb-2 mb-3">■ 今後の展開</h3>
+                                <ul class="list-disc pl-5 space-y-1 text-sm">
+                                    <li>モバイル対応の強化 (スマホからの日報入力最適化)</li>
+                                    <li>AIによる売上予測精度の向上</li>
+                                    <li>店舗間のベストプラクティス共有機能</li>
+                                </ul>
+                            </div>
+                            <div class="flex-1 bg-slate-900 text-white p-5 rounded-xl shadow">
+                                <h3 class="text-md font-black border-b border-slate-700 pb-2 mb-3 text-indigo-300">■ お問い合わせ</h3>
+                                <p class="text-sm">システムに関するご質問・ご要望は、管理本部までご連絡ください。</p>
+                                <p class="text-xs text-slate-400 mt-4">統合管理プラットフォーム MUSEFIT CORE V25.0 (LIVE) <br>発行: 管理本部</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
